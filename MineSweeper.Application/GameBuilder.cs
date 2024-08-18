@@ -1,5 +1,4 @@
-﻿using MineSweeper.Domain.Exceptions;
-using MineSweeper.Domain.Models;
+﻿using MineSweeper.Domain.Models;
 
 namespace MineSweeper.Application
 {
@@ -37,7 +36,7 @@ namespace MineSweeper.Application
                 var randomNumber = random.Next(emptyCells.Count);
                 var index = emptyCells[randomNumber];
 
-                _field[index / _height, index % _width].State = CellState.X;
+                _field[index / _width, index % _width].State = CellState.X;
                 minesCount--;
                 emptyCells.RemoveAt(randomNumber);
             }
